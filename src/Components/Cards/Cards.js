@@ -44,6 +44,9 @@ const Cards = ({results}) => {
         display = "No characters found :/";
     }
 
+
+
+
     return <>{display}</>
 }
 
