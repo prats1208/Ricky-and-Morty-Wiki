@@ -3,9 +3,12 @@ React project showing all the information of Ricky and Morty Cartoon. It's a fun
 
 
 Rick and Morty Api - 
-  "characters": "https://rickandmortyapi.com/api/character"
-  "locations": "https://rickandmortyapi.com/api/location"
-  "episodes": "https://rickandmortyapi.com/api/episode"
+
+"characters": "https://rickandmortyapi.com/api/character"
+
+"locations": "https://rickandmortyapi.com/api/location"
+
+"episodes": "https://rickandmortyapi.com/api/episode"
 
 
 React Pagination package ref-
