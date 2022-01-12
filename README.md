@@ -2,7 +2,7 @@
 React project showing all the information of Ricky and Morty Cartoon. It's a fun react learning project covering react hooks,router,dyanamic pages topics,api topics.
 
 
-Rick and Morty Api - 
+# Rick and Morty Api - 
 
 "characters": "https://rickandmortyapi.com/api/character"
 
@@ -16,7 +16,7 @@ Rick and Morty Api -
 
 
 
-React Pagination package ref-
+# React Pagination package ref-
 https://www.npmjs.com/package/react-paginate
 
 
@@ -26,7 +26,7 @@ https://www.npmjs.com/package/react-paginate
 
 
 
-Package Installations - 
+# Package Installations - 
 
 npx create-react-app .
 
