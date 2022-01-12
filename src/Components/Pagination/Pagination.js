@@ -19,6 +19,16 @@ const Pagination = ({setPageNumber,pageNumber,info}) => {
     //     setPageNumber((x) => x+1);
     // }
 
+    let [width,setWidth]=useState(window.innerWidth)
+
+    let updateDimension=()=>{
+        setWidth(window.innerWidth);
+    }
+
+    useEffect(()=>{
+        window.addEventListener("resize",updateDimension);
+        return ()=>window.removeEventListener("resize",updateDimension);
+    },[]);
     return (
         <>
 
@@ -31,6 +41,16 @@ const Pagination = ({setPageNumber,pageNumber,info}) => {
                 }
                 
                 
+
+                @media (max-width:768px){
+                    .nxt{
+                        display:none;
+                    }
+                    .pagination{
+                        font-size:11px;
+                    }
+                }
+
                 `}
             </style>
 
@@ -46,7 +66,8 @@ const Pagination = ({setPageNumber,pageNumber,info}) => {
                 pageLinkClassName = "page-link"
                 pageCount={info?.pages}
                 breakLabel="..."
-                pageRangeDisplayed={2}               
+                marginPagesDisplayed={width<576 ? 1 : 2}
+                pageRangeDisplayed={width<576 ? 1 : 2}               
                 onPageChange = {(data)=>{setPageNumber(data.selected+1)}}
                 activeClassName="active"
              />

@@ -5,8 +5,45 @@ import Cards from "./Components/Cards/Cards";
 import Filters from "./Components/Filters/Filters";
 import Pagination from "./Components/Pagination/Pagination";
 import Search from "./Components/Search/Search";
+import Navbar from "./Components/Navbar/Navbar";
 
-function App() {
+import {BrowserRouter as Router, Routes,Route} from 'react-router-dom';
+import Episodes from "./Pages/Episodes";
+import Locations from "./Pages/Locations";
+import CardDetails from "./Components/Cards/CardDetails";
+
+
+//Routing diff pages
+function App(){
+  return(
+    <Router>
+      <div>
+        <Navbar/>
+      </div>
+
+      <Routes>
+
+        <Route path="/" element={<Home/>} />
+        <Route path="/:id" element={<CardDetails />} />
+
+        <Route path="/episodes" element={<Episodes/>} />
+        <Route path="/episodes/:id" element={<CardDetails/>} />
+
+        <Route path="/locations" element={<Locations/>} />
+        <Route path="/locations/:id" element={<CardDetails/>} />
+
+      </Routes>
+    </Router>
+
+  )
+}
+
+
+
+
+
+//Home Page
+const Home = () => {
   let [pageNumber,setPageNumber] = useState(1);
   let [search, setSearch] = useState("");
   let [status,setStatus] = useState("");
@@ -28,19 +65,19 @@ function App() {
   },[apiUrl]);
   
   return (
-    <div>
-      <h1 className="text-center ubuntu mt-4 mb-3">Rick & Morty <span className="text-primary">Wiki</span></h1>
+    <div className="App">
       <div className="container">
+        <h1 className="mb-4 text-center">Characters</h1>
         <Search setSearch={setSearch} search={search} setPageNumber={setPageNumber}/>
       </div>
-      <div className="container  justify-content-center">
+      <div className="container justify-content-center">
         <div className="row">
-          
-          <Filters setStatus={setStatus} setGender={setGender} setSpecies={setSpecies} setPageNumber={setPageNumber} />
-          
-          <div className="col-8">
+         
+            <Filters setStatus={setStatus} setGender={setGender} setSpecies={setSpecies} setPageNumber={setPageNumber} />
+         
+          <div className="col-12 col-lg-8">
             <div className="row">
-                <Cards results = {results} />            
+                <Cards page="/" results = {results} />            
             </div>
           </div>
 

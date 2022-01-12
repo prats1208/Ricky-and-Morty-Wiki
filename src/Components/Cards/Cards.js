@@ -1,7 +1,8 @@
 import React from 'react';
 import styles from './Cards.module.scss';
+import { Link } from 'react-router-dom';
 
-const Cards = ({results}) => {
+const Cards = ({results,page}) => {
    
     let display;
 
@@ -9,8 +10,8 @@ const Cards = ({results}) => {
         display = results.map((x)=>{
             let {id,name,image,status,location} = x;
             return(
-                <div key={id} className="col-4 position-relative mb-5">
-                    <div className={styles.inform}>
+                <Link to={`${page}${id}`} key={id} className={`${styles.dec} col-lg-4 col-md-6 col-12 position-relative mb-5`}>
+                    <div className={`${styles.inform} d-flex flex-column justify-content-center`}>
                         <img src={image} className={`${styles.img} img-fluid`} />
                         <div className="info-content px-1">
                             <h1 className="fs-4 mt-1">{name}</h1>
@@ -36,7 +37,7 @@ const Cards = ({results}) => {
                         }
                     })()}
                     
-                </div>
+                </Link>
             )
         });
     }
