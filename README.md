@@ -11,8 +11,19 @@ Rick and Morty Api -
 "episodes": "https://rickandmortyapi.com/api/episode"
 
 
+
+
+
+
+
 React Pagination package ref-
 https://www.npmjs.com/package/react-paginate
+
+
+
+
+
+
 
 
 Package Installations - 
